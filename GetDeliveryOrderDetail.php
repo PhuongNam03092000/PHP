@@ -27,17 +27,17 @@ $_SESSION['flat'] = false;
             echo "<tr>";
             echo "<td>" . $row['product_instance_id'] . "</td>";
             echo "<td>" . $row['product_name'] . "</td>";
-            echo "<td>" . $row['quantity'] . "</td>";
+            echo "<td>" . $row['quanlity'] . "</td>";
             echo "<td>" . $row['is_checked'] . "</td>";
             echo "</tr>";
             if ($row['is_checked'] == 1) {
                 $n = $n + 1;
             }
             if ($n < $rowCount) {
-                $_SESSION['flat'] = false;
+                $_SESSION['flag'] = false;
             }
             if ($n == $rowCount) {
-                $_SESSION['flat'] = true;
+                $_SESSION['flag'] = true;
             }
         }
         ?>

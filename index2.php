@@ -40,7 +40,7 @@
       <div class="card-header">
         <div>Thông tin phiếu giao hàng
           <?php
-          if ($_SESSION['flat'] == true) {
+          if ($_SESSION['flag'] == true) {
             echo "<h3>Đã kiểm trả hoàn tất</h3>";
             echo "</div>";
             echo "<div>";
