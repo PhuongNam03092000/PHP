@@ -3,6 +3,13 @@ $connect = mysqli_connect("localhost", "root", "", "rfiddatabase");
 mysqli_query($connect, "SET NAMES 'utf8'");
 $orderId = $_POST['orderid'];
 if (isset($_POST['submit'])) {
+    // check if order id is existed
+    $query = "SELECT * FROM DELIVERYORDER WHERE delivery_order_id = '$orderId' AND order_status = 1";
+    $data = mysqli_query($connect, $query);
+    if (mysqli_num_rows($data) > 0) {
+        header('Location: index2.php');
+        return;
+    }
     //delete all delivery order detail of this order
     $query = "DELETE FROM DELIVERYORDERDETAIL WHERE delivery_order_id = '$orderId'";
     if (!mysqli_query($connect, $query)) {
@@ -24,4 +31,7 @@ if (isset($_POST['submit'])) {
     }
     fclose($handle);
 }
-header('Location: index2.php');
+?>
+<script>
+    window.location.href = "index2.php";
+</script>

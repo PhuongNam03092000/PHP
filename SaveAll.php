@@ -58,6 +58,13 @@ while ($row = mysqli_fetch_assoc($data)) {
         }
     }
 }
+
+//update status of delivery order to 1
+$query = "UPDATE DELIVERYORDER SET order_status = 1 WHERE delivery_order_id = '$id'";
+if (!mysqli_query($connect, $query)) {
+    echo "Error: " . $query . "<br>" . mysqli_error($connect);
+}
+
 // alert success and clear session and back to index.php
 session_unset();
 session_destroy();
