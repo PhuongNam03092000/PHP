@@ -37,12 +37,12 @@
       <div class="card-header">
         <div>Thông tin phiếu giao hàng
           <?php
-          if ($flat == false) {
+          if ($flat == true) {
             echo "<h3>Đã kiểm trả hoàn tất</h3>";
+            echo "</div>";
+            echo "<div>";
+            echo '<button type="submit" class="btn btn-success">Xác nhận</button>';
           }
-          echo "</div>";
-          echo "<div>";
-          echo '<button type="submit" class="btn btn-success">Xác nhận</button>';
           ?>
         </div>
         <div class="card-body">
