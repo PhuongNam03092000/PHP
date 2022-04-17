@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
         $name = $csv[1];
         $quantity = $csv[2];
         $product_id = $csv[3];
-        $query = "INSERT INTO DeliveryOrderDetail (delivery_order_id,product_instance_id,product_name,quanlity,product_line_id) 
+        $query = "INSERT INTO DeliveryOrderDetail (delivery_order_id,product_instance_id,product_name,quantity,product_line_id) 
             VALUES('$orderId','$rfid','$name','$quantity','$product_id')";
         if (!mysqli_query($connect, $query)) {
             echo "Error: " . $query . "<br>" . mysqli_error($connect);
