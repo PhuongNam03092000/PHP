@@ -20,7 +20,6 @@
   } else {
     $id = $_SESSION['id'];
   }
-  $_SESSION['flat'] = "false";
   ?>
   <div class="container">
     <?php echo "<h1>Mã phiếu giao hàng : . $id</h1> "; ?>
@@ -41,7 +40,7 @@
       <div class="card-header">
         <div>Thông tin phiếu giao hàng
           <?php
-          if ($_SESSION['flat'] == "true") {
+          if ($_SESSION['flat'] == true) {
             echo "<h3>Đã kiểm trả hoàn tất</h3>";
             echo "</div>";
             echo "<div>";
@@ -56,6 +55,7 @@
           }
           ?>
         </div>
+
         <div class="card-body">
           <div id="table-delivery-detail">
 
@@ -63,6 +63,7 @@
         </div>
       </div>
     </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

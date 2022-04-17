@@ -11,6 +11,8 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
+Create DATABASE `rfiddatabase`;
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -119,7 +121,7 @@ ALTER TABLE `ProductLine`
 -- AUTO_INCREMENT for table `DeliveryOrderDetail`
 --
 ALTER TABLE `DeliveryOrderDetail`
-  MODIFY `delivery_order_detail_id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+  MODIFY `delivery_order_detail_id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- Constraints for dumped tables

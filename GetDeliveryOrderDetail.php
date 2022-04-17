@@ -4,6 +4,7 @@ $connect = mysqli_connect("localhost", "root", "", "rfiddatabase");
 mysqli_query($connect, "SET NAMES 'utf8'");
 session_start();
 $id = $_SESSION['id'];
+$_SESSION['flat'] = false;
 ?>
 <table class="table table-dark">
     <thead class="">
@@ -32,8 +33,11 @@ $id = $_SESSION['id'];
             if ($row['is_checked'] == 1) {
                 $n = $n + 1;
             }
+            if ($n < $rowCount) {
+                $_SESSION['flat'] = false;
+            }
             if ($n == $rowCount) {
-                $_SESSION['flat'] = "true";
+                $_SESSION['flat'] = true;
             }
         }
         ?>
