@@ -15,7 +15,7 @@ if (mysqli_num_rows($data) > 0) {
             $row['product_line_id'],
             $row['is_checked'],
             $row['product_name'],
-            (int)$row['quanlity']
+            (int)$row['quantity']
         ));
     }
 }
