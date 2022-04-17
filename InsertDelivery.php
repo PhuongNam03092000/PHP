@@ -14,5 +14,6 @@
     }else{
         echo "Error";
     }
+    mysqli_close($connect);
     header('Location: index2.php');
 ?>
