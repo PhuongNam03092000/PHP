@@ -18,8 +18,6 @@
             <form action="InsertDelivery.php" method="post">
                 Id : <input type="text" name="deliveryorderid" class="form-control"><br>
                 Date : <input type="date" name="date" class="form-control"><br>
-                Expected Quanlity : <input type="number" name="expected" class="form-control"><br>
-                Actual Quanlity : <input type="number" name="actual" class="form-control"><br>
                 <button type="submit" class="btn btn-success btn-block">INSERT</button>
             </form>
         </div>

@@ -13,10 +13,14 @@
 
 <body>
   <?php
-  //require 'GetDeliveryOrderDetail.php';
   session_start();
-  $id = $_SESSION['id'];
-  $flat = false;
+  // set sesseion flat = false
+  if ($_SESSION['id'] == null) {
+    header("Location: index.php");
+  } else {
+    $id = $_SESSION['id'];
+  }
+  $_SESSION['flat'] = "false";
   ?>
   <div class="container">
     <?php echo "<h1>Mã phiếu giao hàng : . $id</h1> "; ?>
@@ -37,11 +41,18 @@
       <div class="card-header">
         <div>Thông tin phiếu giao hàng
           <?php
-          if ($flat == true) {
+          if ($_SESSION['flat'] == "true") {
             echo "<h3>Đã kiểm trả hoàn tất</h3>";
             echo "</div>";
             echo "<div>";
-            echo '<button type="submit" class="btn btn-success">Xác nhận</button>';
+            echo '<form action="SaveAll.php" method="post">';
+            echo '  <button type="submit" id="accept" class="btn btn-success">Hàng đã đủ, nhập kho</button>';
+            echo '</form>';
+          } else {
+            echo "<div>";
+            echo '<form action="SaveAll.php" method="post">';
+            echo '  <button type="submit" id="accept" class="btn btn-danger">Thiếu hàng, chấp nhận nhập kho</button>';
+            echo '</form>';
           }
           ?>
         </div>

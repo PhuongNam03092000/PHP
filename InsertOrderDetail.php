@@ -3,6 +3,12 @@ $connect = mysqli_connect("localhost", "root", "", "rfiddatabase");
 mysqli_query($connect, "SET NAMES 'utf8'");
 $orderId = $_POST['orderid'];
 if (isset($_POST['submit'])) {
+    //delete all delivery order detail of this order
+    $query = "DELETE FROM DELIVERYORDERDETAIL WHERE delivery_order_id = '$orderId'";
+    if (!mysqli_query($connect, $query)) {
+        echo "Error: " . $query . "<br>" . mysqli_error($connect);
+    }
+
     $handle = fopen($_FILES['filename']['tmp_name'], "r");
     $headers = fgetcsv($handle, 1000, ",");
     while (($csv = fgetcsv($handle, 1000, ",")) !== false) {

@@ -33,7 +33,7 @@ $id = $_SESSION['id'];
                 $n = $n + 1;
             }
             if ($n == $rowCount) {
-                $flat = true;
+                $_SESSION['flat'] = "true";
             }
         }
         ?>
