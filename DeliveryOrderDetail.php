@@ -5,7 +5,7 @@ class DeliveryOrderDetail
     {
         $this->DeliveryOrderId = $delivery_order_id;
         $this->ProductInstanceId = $product_instance_id;
-        $this->Product = $product_id;
+        $this->ProductId = $product_id;
         $this->IsChecked = $is_checked;
         $this->ProductName = $product_name;
         $this->Quantity = $quantity;

@@ -39,8 +39,8 @@
       <div class="card-body">
         <form action="InsertOrderDetail.php" method="post" enctype="multipart/form-data">
           Order id: <input readonly type="text" name="orderid" class="form-control" value="<?php echo $id ?>">
-          File excel : <input size='50' type='file' name='filename' accept=".csv" />
-          <input type='submit' name='submit' value='Upload Products'>
+          File excel : <input size='50' type='file' name='filename' accept=".csv" class="form-control" />
+          <input type='submit' name='submit' value='Upload Products' class="btn btn-success btn-block">
         </form>
       </div>
     </div>
