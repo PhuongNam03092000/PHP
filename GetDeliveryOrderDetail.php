@@ -4,8 +4,21 @@ $connect = mysqli_connect("localhost", "root", "", "rfiddatabase");
 mysqli_query($connect, "SET NAMES 'utf8'");
 session_start();
 $id = $_SESSION['id'];
-$_SESSION['flag'] = false;
 ?>
+<?php
+          if ($_SESSION['flag'] == true) {
+            echo "<h3>Đã kiểm trả hoàn tất</h3>";
+            echo "<div>";
+            echo '<form action="SaveAll.php" method="post">';
+            echo '  <button type="submit" id="accept" class="btn btn-success">Hàng đã đủ, nhập kho</button>';
+            echo '</form>';
+            echo "</div>";
+          } else {
+            echo "<div>";
+            echo ' <button type="button" id="force-accept" class="btn btn-danger">Thiếu hàng, không thể nhập kho</button>';
+            echo "</div>";
+          }
+          ?>
 <table class="table table-dark">
     <thead class="">
         <tr style="font-weight: 700;">
@@ -40,7 +53,7 @@ $_SESSION['flag'] = false;
                 $n = $n + 1;
             }
             if ($n < $rowCount) {
-                $_SESSION['flag'] = false;
+                $_SESSION['flag'] =false;
             }
             if ($n == $rowCount) {
                 $_SESSION['flag'] = true;

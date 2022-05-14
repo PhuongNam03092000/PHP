@@ -15,10 +15,9 @@ if (isset($_POST['submit'])) {
     if (!mysqli_query($connect, $query)) {
         echo "Error: " . $query . "<br>" . mysqli_error($connect);
     }
-
     $handle = fopen($_FILES['filename']['tmp_name'], "r");
     $headers = fgetcsv($handle, 1000, ",");
-    while (($csv = fgetcsv($handle, 1000, ",")) !== false) {
+    while (($csv = fgetcsv($handle, 1000, ",")) != false) {
         $rfid = $csv[0];
         $name = $csv[1];
         $quantity = $csv[2];

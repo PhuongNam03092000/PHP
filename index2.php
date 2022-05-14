@@ -22,15 +22,11 @@
     $id = $_SESSION['id'];
   }
   if (!isset($_SESSION['flag'])) {
-    echo "window.location.href = 'index2.php'";
+    $_SESSION['flag'] = false;
   }
   ?>
   <div class="container">
     <?php echo "<h1>Mã phiếu giao hàng :" . $id . "</h1> ";
-    if ($row_cnt > 0) {
-      echo '<h1 style="color:green;">Đơn hàng này đã được nhập kho</h1>';
-    } else
-      echo '<h1 style="color:red;">Đơn hàng này chưa được nhập kho</h1>';
     ?>
     <div class="card">
       <div class="card-header">
@@ -48,21 +44,7 @@
     <div class="card">
       <div class="card-header">
         <div>Thông tin phiếu giao hàng
-          <?php
-          if ($_SESSION['flag'] == true) {
-            echo "<h3>Đã kiểm trả hoàn tất</h3>";
-            echo "</div>";
-            echo "<div>";
-            echo '<form action="SaveAll.php" method="post">';
-            echo '  <button type="submit" id="accept" class="btn btn-success">Hàng đã đủ, nhập kho</button>';
-            echo '</form>';
-            echo "</div>";
-          } else {
-            echo "<div>";
-            echo ' <button type="button" id="force-accept" class="btn btn-danger">Thiếu hàng, không thể nhập kho</button>';
-            echo "</div>";
-          }
-          ?>
+        </div>
           <div class="card-body">
             <div id="table-delivery-detail">
 
